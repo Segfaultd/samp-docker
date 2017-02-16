@@ -11,19 +11,7 @@ RUN apt-get update && apt-get install -y \
  wget \
  psmisc \
  nano \
- htop ^
-
-# Download and extract server files
-# Choose a more general directory name which does not contain any version
-RUN wget http://files.sa-mp.com/samp037svr_R2-1.tar.gz \
- && tar xzf samp037svr_R2-1.tar.gz \
- && rm -f samp037svr_R2-1.tar.gz \
- && mkdir -p /home/server/
- && mv /samp03 /home/server/ \
- && cd /home/server/ \
- && rm -rf include npcmodes/*.pwn filterscripts/*.pwn gamemodes/*.pwn \
- && mv samp03svr samp-svr \
- && chmod 700 *
+ htop
 
 COPY samp.sh /usr/local/bin/samp
 COPY docker-entrypoint.sh /entrypoint.sh
