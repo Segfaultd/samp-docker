@@ -28,9 +28,9 @@ if [ "$1" = 'samp' ]; then
         # 7: Check if there's already a line with the respective key in the server.cfg
         # 7.1 - True: Replace the current value with the new value
         # 7.2 - False: Add new line to server.cfg with the key-value pair
-        grep -q "$key" samp-svr/server.cfg && \
-            sed -i "s/$key .*/$key $value/" samp-svr/server.cfg 2>/dev/null || \
-            sed -i "$ a\\$key $value" samp-svr/server.cfg 2>/dev/null
+        grep -q "$key" /home/server/server.cfg && \
+            sed -i "s/$key .*/$key $value/" /home/server/server.cfg 2>/dev/null || \
+            sed -i "$ a\\$key $value" /home/server/server.cfg 2>/dev/null
     done
 
     IFS=$OLDIFS

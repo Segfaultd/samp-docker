@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd /samp-svr
+cd /home/server/
 case "$1" in
     'start')
         exec nohup ./samp-svr
